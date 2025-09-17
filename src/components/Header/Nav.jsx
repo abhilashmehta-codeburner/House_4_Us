@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 import { HiBars3BottomRight } from 'react-icons/hi2';
 import Image from 'next/image';
 
-const Nav = ({ openNav }) => {
+const Nav = ({ openNav, openLogin, userName }) => {
   const [navBg, setNavBg] = useState(false);
 
   useEffect(() => {
@@ -37,14 +37,20 @@ const Nav = ({ openNav }) => {
         {/* Desktop Menu */}
         <div className='lg:flex items-center space-x-10 hidden'>
           {navLinks.map((navLink) => (
-            <Link key={navLink.id} href={navLink.url}>
+            <Link
+              key={navLink.id}
+              href={navLink.url}
+            >
               <p className='font-medium text-black text-lg hover:text-red-500'>
                 {navLink.label}
               </p>
             </Link>
           ))}
-          <button className='bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition'>
-            Log In/Sign Up
+          <button
+            onClick={openLogin}
+            className='bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition'
+          >
+            {userName ? `Hi ${userName} 👋` : 'Log In / Sign Up'}
           </button>
         </div>
 

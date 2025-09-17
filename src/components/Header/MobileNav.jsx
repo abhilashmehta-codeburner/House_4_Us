@@ -5,7 +5,7 @@ import { CgClose } from 'react-icons/cg';
 import { FaSearch } from 'react-icons/fa';
 import Image from 'next/image';
 
-const MobileNav = ({ showNav, closeNav }) => {
+const MobileNav = ({ showNav, closeNav, openLogin, userName }) => {
   const navOpen = showNav ? 'translate-x-0' : 'translate-x-[-100%]';
 
   return (
@@ -45,14 +45,20 @@ const MobileNav = ({ showNav, closeNav }) => {
         {/* Nav Links */}
         <nav className='flex flex-col space-y-6'>
           {navLinks.map((navLink) => (
-            <Link key={navLink.id} href={navLink.url}>
+            <Link
+              key={navLink.id}
+              href={navLink.url}
+            >
               <p className='text-gray-600 text-lg font-medium hover:text-red-500'>
                 {navLink.label}
               </p>
             </Link>
           ))}
-          <button className='bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition w-fit'>
-            Log In/Sign Up
+          <button
+            onClick={openLogin}
+            className='bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition'
+          >
+            {userName ? `Hi ${userName} 👋` : 'Log In / Sign Up'}
           </button>
         </nav>
       </div>

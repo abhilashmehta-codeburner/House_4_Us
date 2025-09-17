@@ -1,45 +1,35 @@
 'use client';
 import React, { useState } from 'react';
-import Nav from './Nav';
-import MobileNav from './MobileNav';
-import FilterBar from './Filter';
+import Nav from '@/components/Header/Nav';
+import MobileNav from '@/components/Header/MobileNav';
+import LoginModal from '@/components/LoginModel/Model';
 
 const ResponsiveNav = () => {
   const [showNav, setShowNav] = useState(false);
-  const openNavHandler = () => setShowNav(true);
-  const closeNavHandler = () => setShowNav(false);
-
-  // Adjust this to match your actual navbar height (in px)
-  const NAVBAR_HEIGHT = 64;
-  // Adjust this to match your FilterBar height (in px)
-  const FILTERBAR_HEIGHT = 56;
+  const [showLogin, setShowLogin] = useState(false);
+  const [userName, setUserName] = useState('');
 
   return (
-    <div className='w-full'>
-      {/* Navbar (fixed top) */}
-      <div className='fixed top-0 left-0 right-0 z-[1000] bg-white shadow-md'>
-        <Nav openNav={openNavHandler} />
-        <MobileNav
-          showNav={showNav}
-          closeNav={closeNavHandler}
-        />
-      </div>
-
-      {/* Filter Bar (fixed below navbar) */}
-      <div
-        className='fixed left-0 right-0 z-[900]'
-        style={{ top: `${NAVBAR_HEIGHT}px` }}
-      >
-        <FilterBar />
-      </div>
-
-      {/* Spacer so content isn't hidden behind Nav + Filter */}
-      <div
-        style={{
-          height: `${NAVBAR_HEIGHT + FILTERBAR_HEIGHT}px`,
-        }}
+    <>
+      <Nav
+        openNav={() => setShowNav(true)}
+        openLogin={() => setShowLogin(true)}
+        userName={userName}
       />
-    </div>
+
+      <MobileNav
+        showNav={showNav}
+        closeNav={() => setShowNav(false)}
+        openLogin={() => setShowLogin(true)}
+        userName={userName}
+      />
+
+      <LoginModal
+        open={showLogin}
+        onClose={() => setShowLogin(false)}
+        onLoginSuccess={(name) => setUserName(name)} // ✅ updates greeting
+      />
+    </>
   );
 };
 
