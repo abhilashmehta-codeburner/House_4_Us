@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 
 import { useEffect, useState } from 'react';
 
@@ -16,30 +17,30 @@ export default function BannerSlider() {
   }, []);
 
   return (
-    <div className="relative w-full overflow-hidden bg-black">
+    <div className='relative w-full overflow-hidden bg-black'>
       {/* Slider Wrapper */}
       <div
-        className="flex transition-transform duration-700 ease-in-out"
+        className='flex transition-transform duration-700 ease-in-out'
         style={{ transform: `translateX(-${current * 100}%)` }}
       >
         {images.map((src, idx) => (
           <div
             key={idx}
-            className="relative flex-shrink-0 w-full 
+            className='relative flex-shrink-0 w-full 
                        h-[250px] sm:h-[350px] md:h-[450px] lg:h-[500px]
-                       flex items-center justify-center bg-black"
+                       flex items-center justify-center bg-black'
           >
-            <img
+            <Image
               src={src}
               alt={`Banner ${idx + 1}`}
-              className="object-contain w-full h-full"
+              className='object-contain w-full h-full'
             />
           </div>
         ))}
       </div>
 
       {/* Dots Navigation */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+      <div className='absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2'>
         {images.map((_, idx) => (
           <button
             key={idx}

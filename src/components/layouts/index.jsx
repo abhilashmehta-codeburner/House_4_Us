@@ -3,9 +3,9 @@
  * It handles all additional work and states needed before initializing root component.
  */
 import { getCitiesData } from '@/actions';
-import  Footer  from '@/components/Footer';
-import Header from "@/components/Header"
-
+import Footer from '@/components/Footer';
+import Header from '@/components/Header';
+import Script from 'next/script';
 export const PageLayout = async ({ children }) => {
   //-------------- State & Variables --------------//
   const citiesData = await getCitiesData();
@@ -16,7 +16,7 @@ export const PageLayout = async ({ children }) => {
   return (
     <>
       <Header _this={{ cities: citiesData?.cities }} />
-      <main className="min-h-[80vh]">{children}</main>
+      <main className='min-h-[80vh]'>{children}</main>
       <Footer />
     </>
   );

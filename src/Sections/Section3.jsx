@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 
 import { useEffect, useState } from 'react';
 
@@ -49,7 +50,7 @@ const Section3 = () => {
             className='relative flex-shrink-0 w-full 
                        h-[250px] sm:h-[350px] md:h-[450px] lg:h-[400px]'
           >
-            <img
+            <Image
               src={src}
               alt={`Banner ${idx + 1}`}
               className='w-full h-full object-cover'

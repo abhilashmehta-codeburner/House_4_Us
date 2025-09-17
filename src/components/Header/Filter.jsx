@@ -17,7 +17,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover';
-import { MapPin, Home, IndianRupee, Users, X } from 'lucide-react';
+import { MapPin, Home, IndianRupee, Users, X, ChevronDown } from 'lucide-react';
 
 // Format budget numbers
 function formatCurrency(num) {
@@ -35,6 +35,7 @@ export default function FilterBar() {
   const [propertyType, setPropertyType] = useState([]);
   const [budget, setBudget] = useState([0, 850000000]);
   const [builder, setBuilder] = useState([]);
+  const [openPopover, setOpenPopover] = useState(null);
 
   const cities = [
     'Delhi',
@@ -72,7 +73,7 @@ export default function FilterBar() {
   ];
 
   return (
-    <div className='w-full bg-[#161a28] py-4 shadow-md'>
+    <div className='w-full bg-[#161a28] py-3 shadow-md'>
       {/* ---------------- Mobile Filters ---------------- */}
       <div className='sm:hidden w-full bg-[#161a28] p-4'>
         {!isOpen && (
@@ -93,15 +94,22 @@ export default function FilterBar() {
               <X className='h-5 w-5' />
             </button>
 
-            <Accordion type='single' collapsible className='w-full'>
+            <Accordion
+              type='single'
+              collapsible
+              className='w-full'
+            >
               {/* Location */}
               <AccordionItem value='location'>
                 <AccordionTrigger className='flex items-center gap-2'>
-                  <MapPin className='text-rose-600 h-4 w-4' />
+                  <MapPin className='text-rose-600 h-6 w-6 ' />
                   Location
                 </AccordionTrigger>
                 <AccordionContent>
-                  <Input placeholder='Search city...' className='mb-2' />
+                  <Input
+                    placeholder='Search city...'
+                    className='mb-2'
+                  />
                   <ScrollArea className='h-[150px]'>
                     {cities.map((city) => (
                       <div
@@ -122,7 +130,11 @@ export default function FilterBar() {
                   Budget
                 </AccordionTrigger>
                 <AccordionContent>
-                  <Slider defaultValue={[0, 5000000]} max={10000000} step={100000} />
+                  <Slider
+                    defaultValue={[0, 5000000]}
+                    max={10000000}
+                    step={100000}
+                  />
                 </AccordionContent>
               </AccordionItem>
 
@@ -135,7 +147,10 @@ export default function FilterBar() {
                 <AccordionContent>
                   <div className='space-y-2'>
                     {propertyOptions.map((type) => (
-                      <div key={type} className='flex items-center space-x-2'>
+                      <div
+                        key={type}
+                        className='flex items-center space-x-2'
+                      >
                         <Checkbox />
                         <span>{type}</span>
                       </div>
@@ -151,10 +166,16 @@ export default function FilterBar() {
                   Builder
                 </AccordionTrigger>
                 <AccordionContent>
-                  <Input placeholder='Search builder...' className='mb-2' />
+                  <Input
+                    placeholder='Search builder...'
+                    className='mb-2'
+                  />
                   <ScrollArea className='h-[150px]'>
                     {builders.map((b) => (
-                      <div key={b} className='flex items-center space-x-2 py-1'>
+                      <div
+                        key={b}
+                        className='flex items-center space-x-2 py-1'
+                      >
                         <Checkbox />
                         <span>{b}</span>
                       </div>
@@ -172,16 +193,28 @@ export default function FilterBar() {
       </div>
 
       {/* ---------------- Desktop Filters ---------------- */}
-      <div className='hidden sm:flex w-[90%] xl:w-[80%] mx-auto gap-4 items-center justify-between'>
+      <div className='hidden sm:flex w-[90%] xl:w-[80%] mx-auto gap-3 items-center justify-between'>
         {/* Location */}
-        <Popover>
+        <Popover
+          open={openPopover === 'location'}
+          onOpenChange={(o) => setOpenPopover(o ? 'location' : null)}
+        >
           <PopoverTrigger asChild>
             <Button
               variant='outline'
-              className='rounded-full bg-white text-black flex items-center gap-2 px-4'
+              className='rounded-full bg-white text-black flex items-center justify-between px-4 min-w-[180px]'
             >
-              <MapPin className='text-rose-600 h-4 w-4' />
-              {location || 'Enter Location'}
+              <div className='flex items-center gap-2'>
+                <MapPin className='text-rose-600 h-4 w-4' />
+                <span className='text-[16px]'>
+                  {location || 'Enter Location'}
+                </span>
+              </div>
+              <ChevronDown
+                className={`ml-14 h-4 w-4 text-gray-600 transition-transform ${
+                  openPopover === 'location' ? 'rotate-180' : ''
+                }`}
+              />
             </Button>
           </PopoverTrigger>
           <PopoverContent className='w-60 p-3'>
@@ -206,14 +239,24 @@ export default function FilterBar() {
         </Popover>
 
         {/* Budget */}
-        <Popover>
+        <Popover
+          open={openPopover === 'budget'}
+          onOpenChange={(o) => setOpenPopover(o ? 'budget' : null)}
+        >
           <PopoverTrigger asChild>
             <Button
               variant='outline'
-              className='rounded-full bg-white text-black flex items-center gap-2 px-4'
+              className='rounded-full bg-white text-black flex items-center justify-between px-4 min-w-[180px]'
             >
-              <IndianRupee className='text-rose-600 h-4 w-4' />
-              Budget
+              <div className='flex items-center gap-2'>
+                <IndianRupee className='text-rose-600 h-4 w-4' />
+                <span className='text-[16px]'>Budget</span>
+              </div>
+              <ChevronDown
+                className={`ml-14 h-4 w-4 text-gray-600 transition-transform ${
+                  openPopover === 'budget' ? 'rotate-180' : ''
+                }`}
+              />
             </Button>
           </PopoverTrigger>
           <PopoverContent className='w-80 p-4'>
@@ -231,25 +274,40 @@ export default function FilterBar() {
         </Popover>
 
         {/* Property Type */}
-        <Popover>
+        <Popover
+          open={openPopover === 'property'}
+          onOpenChange={(o) => setOpenPopover(o ? 'property' : null)}
+        >
           <PopoverTrigger asChild>
             <Button
               variant='outline'
-              className='rounded-full bg-white text-black flex items-center gap-2 px-4'
+              className='rounded-full bg-white text-black flex items-center justify-between px-4 min-w-[180px]'
             >
-              <Home className='text-rose-600 h-4 w-4' />
-              Property Type
+              <div className='flex items-center gap-2'>
+                <Home className='text-rose-600 h-4 w-4' />
+                <span className='text-[16px]'>Property Type</span>
+              </div>
+              <ChevronDown
+                className={`ml-14 h-4 w-4 text-gray-600 transition-transform ${
+                  openPopover === 'property' ? 'rotate-180' : ''
+                }`}
+              />
             </Button>
           </PopoverTrigger>
           <PopoverContent className='w-60 p-3'>
             <div className='space-y-2'>
               {propertyOptions.map((type) => (
-                <div key={type} className='flex items-center space-x-2'>
+                <div
+                  key={type}
+                  className='flex items-center space-x-2'
+                >
                   <Checkbox
                     checked={propertyType.includes(type)}
                     onCheckedChange={(checked) => {
                       setPropertyType((prev) =>
-                        checked ? [...prev, type] : prev.filter((t) => t !== type)
+                        checked
+                          ? [...prev, type]
+                          : prev.filter((t) => t !== type)
                       );
                     }}
                   />
@@ -261,18 +319,31 @@ export default function FilterBar() {
         </Popover>
 
         {/* Builder */}
-        <Popover>
+        <Popover
+          open={openPopover === 'builder'}
+          onOpenChange={(o) => setOpenPopover(o ? 'builder' : null)}
+        >
           <PopoverTrigger asChild>
             <Button
               variant='outline'
-              className='rounded-full bg-white text-black flex items-center gap-2 px-4'
+              className='rounded-full bg-white text-black flex items-center justify-between px-4 min-w-[200px]'
             >
-              <Users className='text-rose-600 h-4 w-4' />
-              Builder
+              <div className='flex items-center gap-2'>
+                <Users className='text-rose-600 h-4 w-4' />
+                <span className='text-[16px]'>Builder</span>
+              </div>
+              <ChevronDown
+                className={`ml-1 h-4 w-4 text-gray-600 transition-transform ${
+                  openPopover === 'builder' ? 'rotate-180' : ''
+                }`}
+              />
             </Button>
           </PopoverTrigger>
           <PopoverContent className='w-72 p-3'>
-            <Input placeholder='Search...' className='mb-2' />
+            <Input
+              placeholder='Search...'
+              className='mb-2'
+            />
             <div className='flex justify-between mb-2 text-sm'>
               <span
                 className='cursor-pointer text-blue-600'
@@ -289,7 +360,10 @@ export default function FilterBar() {
             </div>
             <ScrollArea className='h-[200px]'>
               {builders.map((b) => (
-                <div key={b} className='flex items-center space-x-2 py-1'>
+                <div
+                  key={b}
+                  className='flex items-center space-x-2 py-1'
+                >
                   <Checkbox
                     checked={builder.includes(b)}
                     onCheckedChange={(checked) => {

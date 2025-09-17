@@ -125,3 +125,39 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* globals.css or a CSS module */
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 1s linear infinite;
+}
+
+.loader::before,
+.loader::after {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0px;
+  border-radius: 50%;
+  border: 5px solid transparent;
+}
+
+.loader::before {
+  border-top-color: white; /* white arc */
+}
+
+.loader::after {
+  border-bottom-color: #ff3d00; /* orange arc */
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
