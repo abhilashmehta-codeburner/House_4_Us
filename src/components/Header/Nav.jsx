@@ -10,10 +10,8 @@ const Nav = ({ openNav, openLogin, userName }) => {
 
   useEffect(() => {
     const handler = () => {
-      if (window.scrollY >= 90) setNavBg(true);
-      if (window.scrollY < 90) setNavBg(false);
+      setNavBg(window.scrollY >= 90);
     };
-
     window.addEventListener('scroll', handler);
     return () => window.removeEventListener('scroll', handler);
   }, []);
@@ -22,7 +20,7 @@ const Nav = ({ openNav, openLogin, userName }) => {
     <div
       className={`fixed ${
         navBg ? 'bg-white shadow-md' : 'bg-white'
-      } h-[10vh] z-[100] w-full transition-all duration-200`}
+      } h-[64px] z-[1000] w-full transition-all duration-200`}
     >
       <div className='flex items-center h-full justify-between w-[95%] sm:w-[90%] xl:w-[80%] mx-auto'>
         {/* Logo */}
