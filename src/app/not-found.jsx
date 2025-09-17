@@ -1,30 +1,50 @@
 /**
- * Not Found page
- * IF any route not exist then this page will be shown
+ * Custom 404 Page
+ * Shown when a route does not exist
  */
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 /**
- * Metadata details
+ * Metadata
  */
 export const metadata = {
-  title: '404',
-  description: 'Not found page description'
+  title: '404 - Page Not Found',
+  description:
+    'The page you are looking for might have been removed, renamed, or is temporarily unavailable.',
 };
 
 const PageNotFound = () => {
   return (
-    <section className="flex min-h-[80vh] flex-col items-center justify-center">
-      <h1 className="text-5xl font-bold capitalize sm:text-9xl">
-        4<span className="text-purple-800">0</span>4
+    <section className='flex min-h-screen flex-col items-center justify-center bg-gray-50 px-4 text-center'>
+      {/* 404 Image */}
+      <div className='max-w-5xl'>
+        <Image
+          src='/images/404.png'
+          alt='404 Not Found'
+          width={1200}
+          height={800}
+          priority
+          className='mx-auto'
+        />
+      </div>
+
+      {/* Text Section */}
+      <h1 className='mt-6 text-3xl font-bold text-gray-800 md:text-4xl'>
+        404 - PAGE NOT FOUND
       </h1>
-      <h2 className="mt-4 text-2xl capitalize sm:text-4xl">Oops! Page not Found</h2>
+      <p className='mt-3 text-gray-600 max-w-md mx-auto'>
+        The page you are looking for might have been removed, had its name
+        changed, or is temporarily unavailable.
+      </p>
+
+      {/* Button */}
       <Link
-        href={'/'}
-        className="mt-5 block rounded p-2 px-4 text-sm font-semibold text-white underline underline-offset-2 transition-colors duration-300"
+        href='/'
+        className='mt-6 inline-block rounded-full bg-red-500 px-6 py-2 text-white text-sm font-semibold shadow-md transition hover:bg-red-600'
       >
-        Go to home
+        GO TO HOMEPAGE
       </Link>
     </section>
   );
