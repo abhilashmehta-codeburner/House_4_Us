@@ -48,14 +48,19 @@ const MobileNav = ({ showNav, closeNav, openLogin, userName }) => {
             <Link
               key={navLink.id}
               href={navLink.url}
+              onClick={closeNav} // ✅ Auto-close menu on click
             >
               <p className='text-gray-600 text-lg font-medium hover:text-red-500'>
                 {navLink.label}
               </p>
             </Link>
           ))}
+
           <button
-            onClick={openLogin}
+            onClick={() => {
+              openLogin();
+              closeNav(); // ✅ Also close menu after login click
+            }}
             className='bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition'
           >
             {userName ? `Hi ${userName} 👋` : 'Log In / Sign Up'}
