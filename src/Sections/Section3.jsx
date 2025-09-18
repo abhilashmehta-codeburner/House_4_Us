@@ -1,6 +1,5 @@
 'use client';
 import Image from 'next/image';
-
 import { useEffect, useState } from 'react';
 
 // Desktop banners
@@ -19,7 +18,7 @@ const Section3 = () => {
   // Detect screen size
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 640); // sm breakpoint (Tailwind)
+      setIsMobile(window.innerWidth < 640); // sm breakpoint
     };
 
     checkScreenSize();
@@ -53,7 +52,9 @@ const Section3 = () => {
             <Image
               src={src}
               alt={`Banner ${idx + 1}`}
-              className='w-full h-full object-cover'
+              fill
+              priority={idx === 0} // preload first image
+              className='object-cover'
             />
           </div>
         ))}
