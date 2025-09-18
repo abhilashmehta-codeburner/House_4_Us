@@ -29,7 +29,7 @@ const PropertyInfo = ({ property }) => {
   ];
 
   return (
-    <div className='max-w-4xl mx-auto px-4 py-8 space-y-10'>
+    <div className=' px-4 py-8 space-y-10'>
       {/* Section 1 */}
       <Card className='border-none shadow-none'>
         <CardHeader>

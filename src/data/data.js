@@ -41,7 +41,8 @@ export const properties = [
     bhk: '2/3 BHK',
     possession: 'Ready To Move In',
     lastUpdated: '07-09-2025',
-    imageUrl: '/images/p1.jpg', // replace with actual image path
+    imageUrl: '/images/p1.jpg',
+    images: ['/images/p3.jpg', '/images/p4.jpg', '/images/p5.jpg'], // replace with actual image path
   },
   {
     id: 2,
@@ -53,6 +54,7 @@ export const properties = [
     possession: 'Ready To Move In',
     lastUpdated: '07-09-2025',
     imageUrl: '/images/p2.jpg',
+    images: ['/images/p3.jpg', '/images/p4.jpg', '/images/p5.jpg'],
   },
   {
     id: 3,
@@ -64,6 +66,7 @@ export const properties = [
     possession: 'Ready To Move In',
     lastUpdated: '07-09-2025',
     imageUrl: '/images/p3.jpg',
+    images: ['/images/p3.jpg', '/images/p4.jpg', '/images/p5.jpg'],
   },
   {
     id: 4,
@@ -75,6 +78,7 @@ export const properties = [
     possession: 'Ready To Move In',
     lastUpdated: '07-09-2025',
     imageUrl: '/images/p4.jpg',
+    images: ['/images/p3.jpg', '/images/p4.jpg', '/images/p5.jpg'],
   },
   {
     id: 5,
@@ -86,6 +90,7 @@ export const properties = [
     possession: 'Ready To Move In',
     lastUpdated: '07-09-2025',
     imageUrl: '/images/p5.jpg',
+    images: ['/images/p3.jpg', '/images/p4.jpg', '/images/p5.jpg'],
   },
   {
     id: 6,
@@ -97,6 +102,7 @@ export const properties = [
     possession: 'Ready To Move In',
     lastUpdated: '07-09-2025',
     imageUrl: '/images/p6.jpg',
+    images: ['/images/p3.jpg', '/images/p4.jpg', '/images/p5.jpg'],
   },
   {
     id: 7,
@@ -107,7 +113,8 @@ export const properties = [
     bhk: '2/3 BHK',
     possession: 'Ready To Move In',
     lastUpdated: '07-09-2025',
-    imageUrl: '/images/p1.jpg', // replace with actual image path
+    imageUrl: '/images/p1.jpg',
+    images: ['/images/p3.jpg', '/images/p4.jpg', '/images/p5.jpg'], // replace with actual image path
   },
   {
     id: 8,
@@ -119,6 +126,7 @@ export const properties = [
     possession: 'Ready To Move In',
     lastUpdated: '07-09-2025',
     imageUrl: '/images/p2.jpg',
+    images: ['/images/p3.jpg', '/images/p4.jpg', '/images/p5.jpg'],
   },
   {
     id: 9,
@@ -130,6 +138,7 @@ export const properties = [
     possession: 'Ready To Move In',
     lastUpdated: '07-09-2025',
     imageUrl: '/images/p3.jpg',
+    images: ['/images/p3.jpg', '/images/p4.jpg', '/images/p5.jpg'],
   },
   {
     id: 10,
@@ -141,6 +150,7 @@ export const properties = [
     possession: 'Ready To Move In',
     lastUpdated: '07-09-2025',
     imageUrl: '/images/p4.jpg',
+    images: ['/images/p3.jpg', '/images/p4.jpg', '/images/p5.jpg'],
   },
   {
     id: 11,
@@ -152,6 +162,7 @@ export const properties = [
     possession: 'Ready To Move In',
     lastUpdated: '07-09-2025',
     imageUrl: '/images/p5.jpg',
+    images: ['/images/p3.jpg', '/images/p4.jpg', '/images/p5.jpg'],
   },
   {
     id: 12,
@@ -163,6 +174,7 @@ export const properties = [
     possession: 'Ready To Move In',
     lastUpdated: '07-09-2025',
     imageUrl: '/images/p6.jpg',
+    images: ['/images/p3.jpg', '/images/p4.jpg', '/images/p5.jpg'],
   },
   {
     id: 13,
@@ -173,7 +185,9 @@ export const properties = [
     bhk: '2/3 BHK',
     possession: 'Ready To Move In',
     lastUpdated: '07-09-2025',
-    imageUrl: '/images/p1.jpg', // replace with actual image path
+    imageUrl: '/images/p1.jpg',
+    images: ['/images/p3.jpg', '/images/p4.jpg', '/images/p5.jpg'],
+    // replace with actual image path
   },
   {
     id: 14,
@@ -185,6 +199,7 @@ export const properties = [
     possession: 'Ready To Move In',
     lastUpdated: '07-09-2025',
     imageUrl: '/images/p2.jpg',
+    images: ['/images/p3.jpg', '/images/p4.jpg', '/images/p5.jpg'],
   },
   {
     id: 15,
@@ -196,6 +211,7 @@ export const properties = [
     possession: 'Ready To Move In',
     lastUpdated: '07-09-2025',
     imageUrl: '/images/p3.jpg',
+    images: ['/images/p3.jpg', '/images/p4.jpg', '/images/p5.jpg'],
   },
   {
     id: 16,
@@ -207,6 +223,7 @@ export const properties = [
     possession: 'Ready To Move In',
     lastUpdated: '07-09-2025',
     imageUrl: '/images/p4.jpg',
+    images: ['/images/p3.jpg', '/images/p4.jpg', '/images/p5.jpg'],
   },
   {
     id: 17,
@@ -218,6 +235,7 @@ export const properties = [
     possession: 'Ready To Move In',
     lastUpdated: '07-09-2025',
     imageUrl: '/images/p5.jpg',
+    images: ['/images/p3.jpg', '/images/p4.jpg', '/images/p5.jpg'],
   },
   {
     id: 18,
@@ -229,6 +247,7 @@ export const properties = [
     possession: 'Ready To Move In',
     lastUpdated: '07-09-2025',
     imageUrl: '/images/p6.jpg',
+    images: ['/images/p3.jpg', '/images/p4.jpg', '/images/p5.jpg'],
   },
   {
     id: 19,
@@ -239,7 +258,9 @@ export const properties = [
     bhk: '2/3 BHK',
     possession: 'Ready To Move In',
     lastUpdated: '07-09-2025',
-    imageUrl: '/images/p1.jpg', // replace with actual image path
+    imageUrl: '/images/p1.jpg',
+    images: ['/images/p3.jpg', '/images/p4.jpg', '/images/p5.jpg'],
+    // replace with actual image path
   },
   {
     id: 20,
@@ -251,6 +272,7 @@ export const properties = [
     possession: 'Ready To Move In',
     lastUpdated: '07-09-2025',
     imageUrl: '/images/p2.jpg',
+    images: ['/images/p3.jpg', '/images/p4.jpg', '/images/p5.jpg'],
   },
   {
     id: 21,
@@ -262,6 +284,7 @@ export const properties = [
     possession: 'Ready To Move In',
     lastUpdated: '07-09-2025',
     imageUrl: '/images/p3.jpg',
+    images: ['/images/p3.jpg', '/images/p4.jpg', '/images/p5.jpg'],
   },
   {
     id: 22,
@@ -273,6 +296,7 @@ export const properties = [
     possession: 'Ready To Move In',
     lastUpdated: '07-09-2025',
     imageUrl: '/images/p4.jpg',
+    images: ['/images/p3.jpg', '/images/p4.jpg', '/images/p5.jpg'],
   },
   {
     id: 23,
@@ -284,6 +308,7 @@ export const properties = [
     possession: 'Ready To Move In',
     lastUpdated: '07-09-2025',
     imageUrl: '/images/p5.jpg',
+    images: ['/images/p3.jpg', '/images/p4.jpg', '/images/p5.jpg'],
   },
   {
     id: 24,
@@ -295,6 +320,7 @@ export const properties = [
     possession: 'Ready To Move In',
     lastUpdated: '07-09-2025',
     imageUrl: '/images/p6.jpg',
+    images: ['/images/p3.jpg', '/images/p4.jpg', '/images/p5.jpg'],
   },
   {
     id: 25,
@@ -305,7 +331,9 @@ export const properties = [
     bhk: '2/3 BHK',
     possession: 'Ready To Move In',
     lastUpdated: '07-09-2025',
-    imageUrl: '/images/p1.jpg', // replace with actual image path
+    imageUrl: '/images/p1.jpg',
+    images: ['/images/p3.jpg', '/images/p4.jpg', '/images/p5.jpg'],
+    // replace with actual image path
   },
   {
     id: 26,
@@ -317,6 +345,7 @@ export const properties = [
     possession: 'Ready To Move In',
     lastUpdated: '07-09-2025',
     imageUrl: '/images/p2.jpg',
+    images: ['/images/p3.jpg', '/images/p4.jpg', '/images/p5.jpg'],
   },
   {
     id: 27,
@@ -328,6 +357,7 @@ export const properties = [
     possession: 'Ready To Move In',
     lastUpdated: '07-09-2025',
     imageUrl: '/images/p3.jpg',
+    images: ['/images/p3.jpg', '/images/p4.jpg', '/images/p5.jpg'],
   },
   {
     id: 28,
@@ -339,6 +369,7 @@ export const properties = [
     possession: 'Ready To Move In',
     lastUpdated: '07-09-2025',
     imageUrl: '/images/p4.jpg',
+    images: ['/images/p3.jpg', '/images/p4.jpg', '/images/p5.jpg'],
   },
   {
     id: 29,
@@ -350,6 +381,7 @@ export const properties = [
     possession: 'Ready To Move In',
     lastUpdated: '07-09-2025',
     imageUrl: '/images/p5.jpg',
+    images: ['/images/p3.jpg', '/images/p4.jpg', '/images/p5.jpg'],
   },
   {
     id: 30,
@@ -361,6 +393,7 @@ export const properties = [
     possession: 'Ready To Move In',
     lastUpdated: '07-09-2025',
     imageUrl: '/images/p6.jpg',
+    images: ['/images/p3.jpg', '/images/p4.jpg', '/images/p5.jpg'],
   },
   {
     id: 31,
@@ -371,7 +404,9 @@ export const properties = [
     bhk: '2/3 BHK',
     possession: 'Ready To Move In',
     lastUpdated: '07-09-2025',
-    imageUrl: '/images/p1.jpg', // replace with actual image path
+    imageUrl: '/images/p1.jpg',
+    images: ['/images/p3.jpg', '/images/p4.jpg', '/images/p5.jpg'],
+    // replace with actual image path
   },
   {
     id: 32,
@@ -383,6 +418,7 @@ export const properties = [
     possession: 'Ready To Move In',
     lastUpdated: '07-09-2025',
     imageUrl: '/images/p2.jpg',
+    images: ['/images/p3.jpg', '/images/p4.jpg', '/images/p5.jpg'],
   },
   {
     id: 33,
@@ -394,6 +430,7 @@ export const properties = [
     possession: 'Ready To Move In',
     lastUpdated: '07-09-2025',
     imageUrl: '/images/p3.jpg',
+    images: ['/images/p3.jpg', '/images/p4.jpg', '/images/p5.jpg'],
   },
   {
     id: 44,
@@ -405,6 +442,7 @@ export const properties = [
     possession: 'Ready To Move In',
     lastUpdated: '07-09-2025',
     imageUrl: '/images/p4.jpg',
+    images: ['/images/p3.jpg', '/images/p4.jpg', '/images/p5.jpg'],
   },
   {
     id: 35,
@@ -416,6 +454,7 @@ export const properties = [
     possession: 'Ready To Move In',
     lastUpdated: '07-09-2025',
     imageUrl: '/images/p5.jpg',
+    images: ['/images/p3.jpg', '/images/p4.jpg', '/images/p5.jpg'],
   },
   {
     id: 36,
@@ -427,6 +466,7 @@ export const properties = [
     possession: 'Ready To Move In',
     lastUpdated: '07-09-2025',
     imageUrl: '/images/p6.jpg',
+    images: ['/images/p3.jpg', '/images/p4.jpg', '/images/p5.jpg'],
   },
 ];
 

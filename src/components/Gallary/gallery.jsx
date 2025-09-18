@@ -30,7 +30,7 @@ export default function GallerySection({ images = [] }) {
   const nextImage = () => setActiveIndex((prev) => (prev + 1) % images.length);
 
   return (
-    <div className='w-full lg:w-3/5'>
+    <div className='w-full'>
       <h2 className='text-2xl font-bold mb-4'>
         <span className='border-l-4 border-red-500 pl-2'>Gallery</span>
       </h2>
